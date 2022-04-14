@@ -7,10 +7,9 @@ metadata:
 spec:
   selector:
     app: goserver-service
-  type: ClusterIP
+  type: LoadBalancer
   ports:
     - name: goserver-service
       port: 8080
       targetPort: 8080
       protocol: TCP
-      nodePort: 30001
