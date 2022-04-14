@@ -16,10 +16,20 @@ spec:
     spec:
       containers:
         - name: "goserver"
-          image: "loxt/hello-go:v2"
+          image: "loxt/hello-go:v4"
           envFrom:
             - configMapRef:
                 name: goserver-env
+          volumeMounts:
+            - mountPath: "/go/orders"
+              name: config
+      volumes:
+        - name: config
+          configMap:
+            name: configmap-orders
+            items:
+              - key: orders
+                path: "orders.txt"
 #          env:
 #            - name: "NAME"
 #              valueFrom:
