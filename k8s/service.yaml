@@ -6,7 +6,7 @@ metadata:
     app: goserver-service
 spec:
   selector:
-    app: goserver-service
+    app: goserver
   type: ClusterIP
   ports:
     - name: goserver-service
