@@ -16,6 +16,12 @@ spec:
     spec:
       containers:
         - name: "goserver"
+          startupProbe:
+            httpGet:
+              path: /healthz
+              port: 8080
+            periodSeconds: 3
+            failureThreshold: 30
           readinessProbe:
             httpGet:
               path: /healthz
