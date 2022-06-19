@@ -23,15 +23,15 @@ spec:
             periodSeconds: 3
             failureThreshold: 1
             initialDelaySeconds: 10
-          #          livenessProbe:
-          #            httpGet:
-          #              path: /healthz
-          #              port: 8080
-          #            initialDelaySeconds: 30
-          #            periodSeconds: 10
-          #            failureThreshold: 3
-          #            timeoutSeconds: 1
-          #            successThreshold: 1
+          livenessProbe:
+            httpGet:
+              path: /healthz
+              port: 8080
+            periodSeconds: 5
+            failureThreshold: 1
+            initialDelaySeconds: 15
+            timeoutSeconds: 1
+            successThreshold: 1
           image: "loxt/hello-go:latest"
           envFrom:
             - configMapRef:
