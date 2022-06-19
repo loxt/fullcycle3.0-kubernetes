@@ -7,4 +7,4 @@ metadata:
 spec:
   containers:
     - name: "goserver"
-      image: "loxt/hello-go:latest"
+      image: "loxt/hello-go:v5.5"
